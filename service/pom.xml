@@ -12,6 +12,7 @@
 
     <groupId>com.spring.demo.test</groupId>
     <artifactId>service</artifactId>
+    <packaging>jar</packaging>
     <version>1.0-SNAPSHOT</version>
 
     <dependencies>
