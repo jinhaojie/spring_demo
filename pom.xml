@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.spring.demo</groupId>
+    <artifactId>spring-demo</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0-SNAPSHOT</version>
+
+    <modules>
+        <module>web</module>
+        <module>service</module>
+    </modules>
+
+	<properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.spring.version>3.2.13.RELEASE</project.spring.version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>junit</groupId>
+                <artifactId>junit</artifactId>
+                <version>4.12</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-web</artifactId>
+                <version>${project.spring.version}</version>
+            </dependency>
+            <!-- https://mvnrepository.com/artifact/org.mybatis/mybatis-spring -->
+
+
+            <!-- https://mvnrepository.com/artifact/org.springframework/spring-tx -->
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-tx</artifactId>
+                <version>${project.spring.version}</version>
+            </dependency>
+
+
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-core</artifactId>
+                <version>${project.spring.version}</version>
+            </dependency>
+
+
+            <!-- https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api -->
+            <dependency>
+                <groupId>javax.servlet</groupId>
+                <artifactId>javax.servlet-api</artifactId>
+                <version>3.0.1</version>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/org.springframework/spring-webmvc -->
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-webmvc</artifactId>
+                <version>${project.spring.version}</version>
+            </dependency>
+
+
+            <!-- https://mvnrepository.com/artifact/org.springframework/spring-context -->
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-context</artifactId>
+                <version>${project.spring.version}</version>
+            </dependency>
+
+        </dependencies>
+    </dependencyManagement>
+
+
+   <profiles>
+       <profile>
+           <id>dev</id>
+           <properties>
+               <env>dev</env>
+           </properties>
+           <activation>
+               <activeByDefault>true</activeByDefault><!--默认启用的是dev环境配置-->
+           </activation>
+       </profile>
+       <profile>
+           <id>test</id>
+           <properties>
+               <env>test</env>
+           </properties>
+           <activation>
+               <activeByDefault>true</activeByDefault><!--test-->
+           </activation>
+       </profile>
+       <profile>
+           <id>production</id>
+           <properties>
+               <env>production</env>
+           </properties>
+           <activation>
+               <activeByDefault>true</activeByDefault><!--production-->
+           </activation>
+       </profile>
+   </profiles>
+
+    <build>
+        <!--<defaultGoal>package</defaultGoal>-->
+        <!--<filters> &lt;!&ndash; 指定使用的 filter &ndash;&gt;-->
+            <!--<filter>${user.dir}/env/filter-${env}.properties</filter>-->
+        <!--</filters>-->
+        <!--<resources>-->
+            <!--<resource> &lt;!&ndash; 配置需要被替换的资源文件路径, db.properties 应该在 src/main/resource 目录下 &ndash;&gt;-->
+                <!--<directory>src/main/resources</directory>-->
+                <!--<filtering>true</filtering> &lt;!&ndash; 是否使用过滤器 &ndash;&gt;-->
+            <!--</resource>-->
+        <!--</resources>-->
+
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.6.0</version>
+                <configuration>
+                    <source>1.7</source>
+                    <target>1.7</target>
+                    <encoding>UTF-8</encoding>
+                    <compilerArgument>-Xlint:all</compilerArgument>
+                    <fork>true</fork>
+                    <meminitial>512m</meminitial>
+                    <maxmem>1048m</maxmem>
+                </configuration>
+
+                <dependencies>
+                    <dependency>
+                        <groupId>org.codehaus.plexus</groupId>
+                        <artifactId>plexus-compiler-javac</artifactId>
+                        <version>2.8.1</version>
+                    </dependency>
+                </dependencies>
+            </plugin>
+        </plugins>
+    </build>
+
+
+</project>
