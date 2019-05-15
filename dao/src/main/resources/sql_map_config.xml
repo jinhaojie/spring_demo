@@ -7,9 +7,9 @@
     <!--<setting name="logImpl" value="STDOUT_LOGGING"/>-->
     <!--</settings>-->
 
-    <!--<typeAliases>-->
-        <!--<package name="com.qk.datastat.domain.bean"/>-->
-    <!--</typeAliases>-->
+    <typeAliases>
+        <package name="com.spring.demo.entity"/>
+    </typeAliases>
 
     <!--<plugins>-->
         <!--<plugin interceptor="com.yuzooo.ecommerce.core.mybatis.plugin.SelectCountSqlInterceptor" />-->
@@ -19,6 +19,6 @@
     <!--</plugins>-->
 
     <mappers>
-        <!--<mapper resource="datastat_conf/mapper/AudioChannelMapper.xml" />-->
+        <mapper resource="mapper/UserMapper.xml" />
     </mappers>
 </configuration>

@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.spring.demo.dao.UserDAO" >
+    <resultMap id="BaseResultMap" type="com.spring.demo.entity.UserDO" >
+        <result column="id" property="id" jdbcType="BIGINT" />
+        <result column="name" property="name" jdbcType="VARCHAR" />
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,name
+    </sql>
+
+    <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+        select
+        <include refid="Base_Column_List" />
+        from user
+        where id = #{id}
+    </select>
+    <select id="getAllUser" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+        select
+        <include refid="Base_Column_List" />
+        from user
+    </select>
+
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+        delete from user
+        where id = #{id}
+    </delete>
+    <!--<insert id="insert" parameterType="com.qk.datastat.domain.bean.AccountFlowDO" >-->
+        <!--<selectKey resultType="java.lang.Long" keyProperty="id" order="AFTER" >-->
+            <!--SELECT LAST_INSERT_ID()-->
+        <!--</selectKey>-->
+        <!--insert into account_flow (id, html_channel_id, month, status, operatior, create_time,-->
+        <!--edit_time)-->
+        <!--values (#{id}, #{htmlChannelId}, #{month}, #{status}, #{operatior}, #{createTime},-->
+        <!--#{editTime})-->
+    <!--</insert>-->
+    <!--<insert id="insertSelective" parameterType="com.qk.datastat.domain.bean.AccountFlowDO" >-->
+        <!--<selectKey resultType="java.lang.Long" keyProperty="id" order="AFTER" >-->
+            <!--SELECT LAST_INSERT_ID()-->
+        <!--</selectKey>-->
+        <!--insert into account_flow-->
+        <!--<trim prefix="(" suffix=")" suffixOverrides="," >-->
+            <!--id,-->
+            <!--<if test="htmlChannelId != null" >-->
+                <!--html_channel_id,-->
+            <!--</if>-->
+            <!--<if test="month != null" >-->
+                <!--month,-->
+            <!--</if>-->
+            <!--<if test="status != null" >-->
+                <!--status,-->
+            <!--</if>-->
+            <!--<if test="operatior != null" >-->
+                <!--operatior,-->
+            <!--</if>-->
+            <!--<if test="createTime != null" >-->
+                <!--create_time,-->
+            <!--</if>-->
+            <!--<if test="editTime != null" >-->
+                <!--edit_time,-->
+            <!--</if>-->
+        <!--</trim>-->
+        <!--<trim prefix="values (" suffix=")" suffixOverrides="," >-->
+            <!--#{id},-->
+            <!--<if test="htmlChannelId != null" >-->
+                <!--#{htmlChannelId},-->
+            <!--</if>-->
+            <!--<if test="month != null" >-->
+                <!--#{month},-->
+            <!--</if>-->
+            <!--<if test="status != null" >-->
+                <!--#{status},-->
+            <!--</if>-->
+            <!--<if test="operatior != null" >-->
+                <!--#{operatior},-->
+            <!--</if>-->
+            <!--<if test="createTime != null" >-->
+                <!--#{createTime},-->
+            <!--</if>-->
+            <!--<if test="editTime != null" >-->
+                <!--#{editTime},-->
+            <!--</if>-->
+        <!--</trim>-->
+    <!--</insert>-->
+    <!--<update id="updateByPrimaryKeySelective" parameterType="com.qk.datastat.domain.bean.AccountFlowDO" >-->
+        <!--update account_flow-->
+        <!--<set >-->
+            <!--<if test="htmlChannelId != null" >-->
+                <!--html_channel_id = #{htmlChannelId},-->
+            <!--</if>-->
+            <!--<if test="month != null" >-->
+                <!--month = #{month},-->
+            <!--</if>-->
+            <!--<if test="status != null" >-->
+                <!--status = #{status},-->
+            <!--</if>-->
+            <!--<if test="operatior != null" >-->
+                <!--operatior = #{operatior},-->
+            <!--</if>-->
+            <!--<if test="createTime != null" >-->
+                <!--create_time = #{createTime},-->
+            <!--</if>-->
+            <!--<if test="editTime != null" >-->
+                <!--edit_time = #{editTime},-->
+            <!--</if>-->
+        <!--</set>-->
+        <!--where id = #{id}-->
+    <!--</update>-->
+    <!--<update id="updateByPrimaryKey" parameterType="com.qk.datastat.domain.bean.AccountFlowDO" >-->
+    <!--update account_flow-->
+    <!--set html_channel_id = #{htmlChannelId},-->
+      <!--month = #{month},-->
+      <!--status = #{status},-->
+      <!--operatior = #{operatior},-->
+      <!--create_time = #{createTime},-->
+      <!--edit_time = #{editTime}-->
+    <!--where id = #{id}-->
+  <!--</update>-->
+
+</mapper>

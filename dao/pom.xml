@@ -17,6 +17,12 @@
 
 
     <dependencies>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+        </dependency>
+
         <!-- https://mvnrepository.com/artifact/com.alibaba/druid -->
         <dependency>
             <groupId>com.alibaba</groupId>

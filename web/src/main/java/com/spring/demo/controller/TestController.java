@@ -24,5 +24,11 @@ public class TestController {
         return testService.hello();
     }
 
+    @RequestMapping(value = "transaction", method = RequestMethod.GET)
+    @ResponseBody
+    public String transaction() {
+        return testService.testTransction();
+    }
+
 
 }
