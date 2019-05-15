@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+    <!--<settings>-->
+    <!--<setting name="logImpl" value="STDOUT_LOGGING"/>-->
+    <!--</settings>-->
+
+    <!--<typeAliases>-->
+        <!--<package name="com.qk.datastat.domain.bean"/>-->
+    <!--</typeAliases>-->
+
+    <!--<plugins>-->
+        <!--<plugin interceptor="com.yuzooo.ecommerce.core.mybatis.plugin.SelectCountSqlInterceptor" />-->
+        <!--<plugin interceptor="com.yuzooo.ecommerce.core.mybatis.plugin.OffsetLimitInterceptor">-->
+            <!--<property name="dialectClass" value="com.yuzooo.ecommerce.core.mybatis.dialect.MySQLDialect" />-->
+        <!--</plugin>-->
+    <!--</plugins>-->
+
+    <mappers>
+        <!--<mapper resource="datastat_conf/mapper/AudioChannelMapper.xml" />-->
+    </mappers>
+</configuration>

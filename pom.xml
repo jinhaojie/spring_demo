@@ -12,6 +12,7 @@
     <modules>
         <module>web</module>
         <module>service</module>
+        <module>dao</module>
     </modules>
 
 	<properties>
@@ -25,6 +26,11 @@
             <dependency>
                 <groupId>com.spring.demo.test</groupId>
                 <artifactId>service</artifactId>
+                <version>1.0-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>com.spring.demo.test</groupId>
+                <artifactId>dao</artifactId>
                 <version>1.0-SNAPSHOT</version>
             </dependency>
 
@@ -48,6 +54,13 @@
                 <artifactId>spring-tx</artifactId>
                 <version>${project.spring.version}</version>
             </dependency>
+            <!-- https://mvnrepository.com/artifact/org.springframework/spring-jdbc -->
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-jdbc</artifactId>
+                <version>${project.spring.version}</version>
+            </dependency>
+
 
 
 
@@ -87,6 +100,39 @@
                 <version>1.7.2</version>
             </dependency>
 
+            <!-- https://mvnrepository.com/artifact/com.alibaba/druid -->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>druid</artifactId>
+                <version>1.0.28</version>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/org.mybatis/mybatis-spring -->
+            <dependency>
+                <groupId>org.mybatis</groupId>
+                <artifactId>mybatis-spring</artifactId>
+                <version>1.2.4</version>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/org.mybatis/mybatis -->
+            <dependency>
+                <groupId>org.mybatis</groupId>
+                <artifactId>mybatis</artifactId>
+                <version>3.3.1</version>
+            </dependency>
+            <!-- https://mvnrepository.com/artifact/log4j/log4j -->
+            <dependency>
+                <groupId>log4j</groupId>
+                <artifactId>log4j</artifactId>
+                <version>1.2.17</version>
+            </dependency>
+            <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>5.1.38</version>
+            </dependency>
+
 
         </dependencies>
     </dependencyManagement>
@@ -100,24 +146,6 @@
            </properties>
            <activation>
                <activeByDefault>true</activeByDefault><!--默认启用的是dev环境配置-->
-           </activation>
-       </profile>
-       <profile>
-           <id>test</id>
-           <properties>
-               <env>test</env>
-           </properties>
-           <activation>
-               <activeByDefault>true</activeByDefault><!--test-->
-           </activation>
-       </profile>
-       <profile>
-           <id>production</id>
-           <properties>
-               <env>production</env>
-           </properties>
-           <activation>
-               <activeByDefault>true</activeByDefault><!--production-->
            </activation>
        </profile>
    </profiles>

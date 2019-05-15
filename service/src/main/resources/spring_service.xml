@@ -10,5 +10,6 @@
 
     <!--<bean id="testService" class="com.spring.demo.service.TestService"/>-->
     <bean id="testFactoryBean" class="com.spring.demo.service.TestFactoryBean"/>
+    <import resource="classpath*:datasouce.xml"/>
 
 </beans>
